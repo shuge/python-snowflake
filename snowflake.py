@@ -8,7 +8,7 @@ sequence_id_bits = 12L
 max_datacenter_id = 1 << datacenter_id_bits
 max_worker_id = 1 << worker_id_bits
 max_sequence_id = 1 << sequence_id_bits
-max_timestamp = 1 << (64L - datacenter_id_bits - worker_id_bits - sequence_id_bits)
+max_timestamp = 1 << (63L - datacenter_id_bits - worker_id_bits - sequence_id_bits)
 
 def make_snowflake(timestamp_ms, datacenter_id, worker_id, sequence_id, twepoch=twepoch):
     """generate a twitter-snowflake id, based on 
